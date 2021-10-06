@@ -1,19 +1,24 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { DEFAULT_LIGHT_THEME } from 'theme/DefaultLight.theme';
+import { DEFAULT_DARK_THEME } from 'theme/DefaultDark.theme';
+import { ThemeProvider } from 'theme/Theme.context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Navigation from 'navigation';
+import { Appearance } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
-}
+const App = () => {
+	const colorScheme = Appearance.getColorScheme();
+	const [darkMode, setDarkMode] = useState(colorScheme === 'dark');
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+	return (
+		<SafeAreaProvider>
+			<ThemeProvider
+				initial={darkMode ? DEFAULT_DARK_THEME : DEFAULT_LIGHT_THEME}
+			>
+				<Navigation />
+			</ThemeProvider>
+		</SafeAreaProvider>
+	);
+};
+
+export default App;

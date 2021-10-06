@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Price /> renders correctly 1`] = `
+<View>
+  <Text
+    style={
+      Object {
+        "color": "#6B7280",
+        "fontSize": 32,
+        "fontWeight": "700",
+      }
+    }
+  >
+    $
+    0
+    <Text
+      style={
+        Object {
+          "color": "#6B7280",
+          "fontSize": 20,
+          "fontWeight": "700",
+        }
+      }
+    >
+      .00
+    </Text>
+  </Text>
+</View>
+`;
+
+exports[`renders correctly 1`] = `
+<View>
+  <Text
+    style={
+      Object {
+        "color": "#6B7280",
+        "fontSize": 32,
+        "fontWeight": "700",
+      }
+    }
+  >
+    $
+    0
+    <Text
+      style={
+        Object {
+          "color": "#6B7280",
+          "fontSize": 20,
+          "fontWeight": "700",
+        }
+      }
+    >
+      .00
+    </Text>
+  </Text>
+</View>
+`;
